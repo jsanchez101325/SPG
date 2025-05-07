@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Status del Proyecto - SPG</title>
+  <link rel="stylesheet" href="styles.css"> <!-- CSS común -->
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #121212;
+      color: #f1f1f1;
+      margin: 0;
+      padding: 20px;
+    }
+    header, footer {
+      text-align: center;
+      padding: 20px 0;
+      background-color: #1F2937;
+    }
+    nav a {
+      color: #38BDF8;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    h1, h2 {
+      color: #38BDF8;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background-color: #1e1e1e;
+    }
+    th, td {
+      border: 1px solid #444;
+      padding: 10px;
+    }
+    th {
+      background-color: #2d2d2d;
+    }
+    .completado { color: #4CAF50; font-weight: bold; }
+    .pendiente { color: #FFA000; font-weight: bold; }
+    .proceso   { color: #03A9F4; font-weight: bold; }
+    .btn-volver {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #38BDF8;
+      color: #000;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .btn-volver:hover {
+      background-color: #0ea5e9;
+    }
+    ul {
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🏗️ Programa de Status - SPG</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="sobre.html">Sobre el Proyecto</a>
+      <a href="status.html">Estado del Proyecto</a>
+    </nav>
+  </header>
+
+  <main>
+    <p><strong>Fecha del reporte:</strong> 07/05/2025</p>
+    <p><strong>Responsable:</strong> Ing. Jose Sánchez</p>
+    <p><strong>Proyecto:</strong> J^J - Proyecto “Santiago”</p>
+    <p><strong>Ubicación:</strong> Santiago de los Caballeros</p>
+
+    <h2>📋 Resumen Ejecutivo</h2>
+    <p>El proyecto avanza conforme al cronograma establecido...</p>
+
+    <h2>📌 Estado General del Proyecto</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Fase</th>
+          <th>Estado</th>
+          <th>% Avance</th>
+          <th>Observaciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Estudios y permisos</td>
+          <td class="completado">✅ Completado</td>
+          <td>100%</td>
+          <td>Documentación aprobada por la municipalidad</td>
+        </tr>
+        <tr>
+          <td>Cimentación</td>
+          <td class="completado">✅ Completado</td>
+          <td>100%</td>
+          <td>Finalizado sin novedades</td>
+        </tr>
+        <tr>
+          <td>Obra gris</td>
+          <td class="proceso">🔄 En proceso</td>
+          <td>45%</td>
+          <td>Se ejecuta estructura de primer nivel</td>
+        </tr>
+        <tr>
+          <td>Instalaciones eléctricas</td>
+          <td class="pendiente">🕐 Pendiente</td>
+          <td>0%</td>
+          <td>Programado para la próxima semana</td>
+        </tr>
+        <tr>
+          <td>Acabados</td>
+          <td class="pendiente">🕐 Pendiente</td>
+          <td>0%</td>
+          <td>Se está negociando con proveedores</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>📦 Materiales y Proveedores</h2>
+    <ul>
+      <li><strong>Cemento:</strong> entregas al día</li>
+      <li><strong>Acero:</strong> proveedor con retraso de 2 días</li>
+      <li><strong>Ladrillo:</strong> próxima entrega agendada para el 10/05</li>
+    </ul>
+
+    <h2>👷‍♂️ Recursos Humanos</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Categoría</th>
+          <th>Cantidad actual</th>
+          <th>Observaciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Albañiles</td>
+          <td>5</td>
+          <td>Cumplen metas diarias</td>
+        </tr>
+        <tr>
+          <td>Ayudantes</td>
+          <td>3</td>
+          <td>Buen rendimiento</td>
+        </tr>
+        <tr>
+          <td>Ingeniero residente</td>
+          <td>1</td>
+          <td>En sitio</td>
+        </tr>
+        <tr>
+          <td>Supervisor</td>
+          <td>1</td>
+          <td>Realiza controles semanales</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>🛠️ Riesgos y Contingencias</h2>
+    <ul>
+      <li><strong>Climático:</strong> posibles lluvias para la semana próxima.</li>
+      <li><strong>Proveedores:</strong> revisión de contrato por demoras.</li>
+    </ul>
+
+    <h2>📅 Próximas Actividades</h2>
+    <ul>
+      <li>Finalizar obra gris – <strong>15/05</strong></li>
+      <li>Instalaciones eléctricas – <strong>17/05</strong></li>
+      <li>Acabados – <strong>20/05</strong></li>
+    </ul>
+
+    <h2>✅ Conclusiones</h2>
+    <p>El proyecto mantiene un ritmo positivo. Se recomienda continuar con el seguimiento diario y coordinación con proveedores.</p>
+
+    <a class="btn-volver" href="index.html">← Volver al Inicio</a>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 SPG - Sistema de Proyectos para Constructora</p>
+  </footer>
+
+</body>
+</html>
