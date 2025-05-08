@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Comunicación - SPG</title>
-    <link rel="stylesheet" href="css/comunicacion.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>

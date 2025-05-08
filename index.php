@@ -11,8 +11,15 @@ $query_recursos = "SELECT * FROM recursos";
 $stmt_recursos = $pdo->query($query_recursos);
 $recursos = $stmt_recursos->fetchAll(PDO::FETCH_ASSOC);
 
-// Consultar el presupuesto desde la tabla 'presupuesto'
-$query_presupuesto = "SELECT * FROM presupuesto";  
+// Consultar el presupuesto desde la tabla 'presupuesto' con el nombre del proyecto
+$query_presupuesto = "
+    SELECT 
+        pr.proyecto_id, 
+        pr.monto, 
+        p.nombre AS nombre_proyecto
+    FROM presupuesto pr
+    LEFT JOIN proyectos p ON pr.proyecto_id = p.id
+";  
 $stmt_presupuesto = $pdo->query($query_presupuesto);
 $presupuesto = $stmt_presupuesto->fetchAll(PDO::FETCH_ASSOC);
 
@@ -48,31 +55,19 @@ $estado_general = $stmt_estado_general->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <title>Programa de Status - Constructora SPG</title>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>🏗️ Programa de Status - Constructora SPG</h1>
-    </header>
-
-    <nav>
-        <a href="index.php"><i class="fas fa-home"></i> Inicio</a>
-        <a href="proyectos.php"><i class="fas fa-clipboard-list"></i> Proyecto</a>
-        <a href="presupuesto.php"><i class="fas fa-dollar-sign"></i> Presupuesto</a>
-        <a href="recursos.php"><i class="fa-solid fa-money-bill"></i> Recursos</a>
-        <a href="comunicacion.php"><i class="fas fa-comments"></i> Comunicación</a>
-        <a href="sobre.html"><i class="fas fa-info-circle"></i> Sobre el Proyecto</a>
-    </nav>
+    <!-- Incluir el header -->
+    <?php include('header.php'); ?>
 
     <main>
-        <p><strong>Fecha del reporte:</strong> 07/05/2025</p>
-        <p><strong>Responsable:</strong> Ing. Jose Sánchez</p>
-        <p><strong>Proyecto:</strong> J&J - Proyecto “Santiago”</p>
-        <p><strong>Ubicación:</strong> Santiago de los Caballeros</p>
+        <br></br>
 
         <h2>📋 Resumen Ejecutivo</h2>
         <p>El proyecto avanza conforme al cronograma establecido...</p>
@@ -115,8 +110,8 @@ $estado_general = $stmt_estado_general->fetchAll(PDO::FETCH_ASSOC);
         <h2>📈 Presupuesto</h2>
         <ul>
             <?php foreach ($presupuesto as $item): ?>
-            <li><?php echo htmlspecialchars($item['proyecto_id']); ?>: $<?php echo htmlspecialchars($item['monto']); ?>
-            </li>
+            <li><?php echo htmlspecialchars($item['nombre_proyecto']); ?>:
+                $<?php echo htmlspecialchars($item['monto']); ?></li>
             <?php endforeach; ?>
         </ul>
 
@@ -127,8 +122,10 @@ $estado_general = $stmt_estado_general->fetchAll(PDO::FETCH_ASSOC);
                 <?php echo htmlspecialchars($mensaje['mensaje']); ?></li>
             <?php endforeach; ?>
         </ul>
-
     </main>
+
+    <!-- Incluir el footer -->
+    <?php include('footer.php'); ?>
 
 </body>
 

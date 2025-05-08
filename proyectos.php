@@ -38,19 +38,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Crear Proyecto</title>
-    <link rel="stylesheet" href="css/proyectos.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>🏗️ Crear Proyecto - Constructora SPG</h1>
-    </header>
-
-    <nav>
-        <a href="index.php">🏠 Inicio</a>
-        <a href="proyectos.php">📊 Proyectos</a>
-    </nav>
+    <!-- Incluir el header -->
+    <?php include('header.php'); ?>
 
     <main>
         <h2>Formulario para Crear Proyecto</h2>
@@ -99,6 +93,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
         </form>
     </main>
+
+    <!-- Incluir el footer -->
+    <?php include('footer.php'); ?>
 
 </body>
 

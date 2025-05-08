@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Crear Recurso</title>
-    <link rel="stylesheet" href="css/recursos.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>

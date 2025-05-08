@@ -1,0 +1,212 @@
+/* Resetting some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    background-color: #121212;
+    color: #f3f4f6;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px; /* Tamaño base para la fuente */
+}
+
+/* Header */
+header {
+    background-color: #1F2937;
+    color: #38BDF8;
+    padding: 20px 30px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+h1, h2 {
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 10px;
+}
+
+/* Main Section */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Table */
+table {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+    background-color: #1F2937;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 18px 15px; /* Aumentar el espaciado de celdas */
+    text-align: left;
+    border-bottom: 1px solid #3F51B5;
+}
+
+table th {
+    background-color: #3F51B5;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px; /* Aumentar tamaño de fuente en encabezados */
+}
+
+table td {
+    font-size: 16px; /* Tamaño de fuente en celdas */
+}
+
+table tr:nth-child(even) {
+    background-color: #2D3748;
+}
+
+table tr:hover {
+    background-color: #3F51B5;
+    color: #ffffff;
+}
+
+/* List */
+ul {
+    margin-top: 30px;
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 15px; /* Aumentar el margen entre elementos */
+    font-size: 16px;
+}
+
+/* Headings */
+h2 {
+    margin-top: 40px;
+    font-size: 28px; /* Aumentar tamaño de h2 */
+    color: #38BDF8;
+}
+
+h2:before {
+    content: '📋';
+    margin-right: 12px;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+    body {
+        font-size: 15px; /* Reducir tamaño de fuente en pantallas más pequeñas */
+    }
+
+    table th, table td {
+        padding: 15px 12px; /* Reducir el padding en las celdas */
+    }
+
+    h2 {
+        font-size: 26px; /* Reducir tamaño de h2 en pantallas pequeñas */
+    }
+
+    ul li {
+        font-size: 15px; /* Reducir tamaño de fuente en la lista */
+    }
+}
+
+@media (max-width: 768px) {
+    table, ul {
+        font-size: 14px; /* Reducir tamaño de fuente en pantallas más pequeñas */
+    }
+
+    table th, table td {
+        padding: 12px 10px; /* Reducir aún más el padding */
+    }
+
+    h2 {
+        font-size: 22px; /* Ajustar el tamaño del título en pantallas pequeñas */
+    }
+
+    main {
+        padding: 15px;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #1F2937;
+    color: #ffffff;
+    padding: 25px 20px; /* Aumentar padding para más espacio */
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Navigation */
+nav {
+    background-color: #3F51B5;
+    padding: 15px 0; /* Aumentar el padding del menú de navegación */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 20px; /* Aumentar el espacio entre los enlaces */
+    font-weight: bold;
+    font-size: 18px; /* Aumentar tamaño de texto de los enlaces */
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Form */
+form {
+    background-color: #1F2937;
+    padding: 25px 30px; /* Aumentar padding en formularios */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    width: 80%;
+    max-width: 700px; /* Aumentar tamaño máximo del formulario */
+}
+
+form div {
+    margin-bottom: 18px; /* Aumentar margen entre los campos */
+}
+
+form label {
+    font-size: 16px; /* Aumentar tamaño de los labels */
+    font-weight: bold;
+    color: #38BDF8;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 12px; /* Aumentar padding de los campos */
+    border: 1px solid #3F51B5;
+    border-radius: 8px;
+    background-color: #2D3748;
+    color: #f3f4f6;
+    font-size: 16px;
+}
+
+form button {
+    background-color: #38BDF8;
+    color: #ffffff;
+    padding: 12px 25px; /* Aumentar padding en los botones */
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px; /* Aumentar tamaño de texto en los botones */
+}
+
+form button:hover {
+    background-color: #3F51B5;
+}
