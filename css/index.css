@@ -13,7 +13,11 @@ header {
   padding: 20px;
   text-align: center;
 }
-
+/* Pero los títulos dentro del <header> serán blancos */
+header h1, 
+header h2 {
+  color: white;
+}
 /* Estilo para la barra de navegación */
 nav {
   background-color: #e8eaf6; /* Color de fondo de la barra de navegación */
@@ -49,6 +53,7 @@ nav a:hover {
 main {
   padding: 40px;
 }
+
 
 /* Estilo para títulos */
 h1, h2 {
