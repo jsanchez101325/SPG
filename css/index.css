@@ -1,0 +1,206 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #3F51B5;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Estilo para la barra de navegación */
+nav {
+  background-color: #e8eaf6; /* Color de fondo de la barra de navegación */
+  padding: 10px;
+  text-align: center;
+  display: flex; /* Utiliza Flexbox para una distribución más controlada */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Alinea los elementos verticalmente */
+}
+
+/* Estilo para los enlaces dentro de la barra de navegación */
+nav a {
+  color: #38BDF8; /* Color del texto de los enlaces */
+  margin: 0 15px; /* Espacio entre los enlaces */
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  font-size: 18px; /* Tamaño de la fuente */
+  font-weight: bold; /* Negrita en los enlaces */
+  display: flex; /* Alinea el icono y el texto de manera horizontal */
+  align-items: center; /* Alinea verticalmente los iconos y el texto */
+}
+
+/* Estilo para los iconos dentro de los enlaces */
+nav a i {
+  margin-right: 8px; /* Espacio entre el ícono y el texto */
+}
+
+/* Estilo para los enlaces al pasar el ratón sobre ellos */
+nav a:hover {
+  text-decoration: underline; /* Subraya el enlace cuando se pasa el ratón */
+}
+
+
+main {
+  padding: 40px;
+}
+
+/* Estilo para títulos */
+h1, h2 {
+  color: #3F51B5;
+}
+
+/* Estilo para tablas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #e8eaf6;
+  color: #333;
+}
+
+td {
+  background-color: #fff;
+}
+
+/* Estilo para clases de estado (proyectos) */
+.completado {
+  color: green;
+  font-weight: bold;
+}
+
+.pendiente {
+  color: orange;
+  font-weight: bold;
+}
+
+.proceso {
+  color: #2196F3;
+  font-weight: bold;
+}
+
+/* Estilo para los elementos de la lista */
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+/* Estilo para las comunicaciones */
+ul li strong {
+  color: #3F51B5;
+}
+
+/* Estilo para los enlaces */
+a {
+  color: #3F51B5;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo para el contenedor principal */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Estilos para la barra de navegación */
+nav {
+  background-color: #eeeeee;
+  padding: 12px 0;
+}
+
+nav a {
+  color: #333;
+  padding: 10px;
+}
+
+nav a:hover {
+  background-color: #ddd;
+  border-radius: 4px;
+}
+
+/* Estilo para los encabezados de la sección */
+h2 {
+  margin-top: 40px;
+  font-size: 1.8em;
+  color: #3F51B5;
+}
+
+/* Estilos para el resumen ejecutivo */
+h2:first-of-type {
+  margin-top: 20px;
+}
+
+p {
+  font-size: 1.1em;
+}
+
+/* Estilo para las filas de la tabla de estado general */
+tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+/* Efecto hover en las filas de la tabla */
+tbody tr:hover {
+  background-color: #e1e1e1;
+}
+
+/* Estilos para la tabla de recursos */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  font-size: 1.1em;
+}
+
+/* Estilo para las celdas en la tabla de estado general */
+td, th {
+  text-align: center;
+}
+
+/* Estilos de los formularios (si los necesitas más tarde) */
+input[type="text"], input[type="number"], textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+input[type="submit"] {
+  background-color: #3F51B5;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #2c3e50;
+}
+
