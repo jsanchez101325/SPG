@@ -42,17 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body>
 
-    <header>
-        <h1>💬 Comunicación - Constructora SPG</h1>
-    </header>
-
-    <nav>
-        <a href="index.php">🏠 Inicio</a>
-        <a href="proyectos.php">📊 Proyectos</a>
-        <a href="presupuesto.php">📊 Presupuesto</a>
-        <a href="comunicacion.php">📊 Comunicación</a>
-        <a href="sobre.html">ℹ️ Sobre el Proyecto</a>
-    </nav>
+    <!-- Incluir el header -->
+    <?php include('header.php'); ?>
 
     <main>
         <h2>Formulario para Enviar Mensaje de Comunicación</h2>
@@ -87,6 +78,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
         </form>
     </main>
+
+    <!-- Incluir el footer -->
+    <?php include('footer.php'); ?>
 
 </body>
 
