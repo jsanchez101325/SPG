@@ -1,45 +1,43 @@
 <?php
 session_start();
-include('db.php');
+include('db.php'); // Asegúrate de que $pdo esté correctamente configurado
 
-// Si el usuario ya está logueado, redirigir al índice
+// Si el usuario ya está logueado, redirigir a la app principal
 if (isset($_SESSION['user_id'])) {
-    header('Location: index.php');
+    header('Location: app.php');
     exit;
 }
 
+$error = ''; // Variable para mostrar mensajes de error
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Filtrar y sanitizar los datos del formulario
     $correo = filter_input(INPUT_POST, 'correo', FILTER_SANITIZE_EMAIL);
     $password = $_POST['password'];
 
-    // Validar que el correo y la contraseña no estén vacíos
     if (empty($correo) || empty($password)) {
         $error = "Por favor, completa todos los campos.";
     } else {
-        // Consultar si el correo existe en la base de datos
-        $query = "SELECT * FROM usuarios WHERE correo = :correo";
+        $query = "SELECT * FROM usuarios WHERE correo = :correo LIMIT 1";
         $stmt = $pdo->prepare($query);
         $stmt->execute(['correo' => $correo]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        // Verificar si el usuario existe y la contraseña es correcta
-        if ($user && password_verify($password, $user['contraseña'])) {
-            // Iniciar sesión
+        // Comparación de contraseña (sin hash, solo para ejemplo simple)
+        if ($user && $password === $user['contraseña']) {
+            // Establecer variables de sesión
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user_name'] = $user['nombre'];
             $_SESSION['user_role'] = $user['rol'];
-            // Redirigir al índice
-            header('Location: index.php');
+
+            // Redirigir al sistema
+            header('Location: app.php');
             exit;
         } else {
-            // Si la autenticación falla, mostrar un mensaje de error
             $error = "Correo o contraseña incorrectos.";
         }
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -65,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit">Entrar</button>
         </form>
 
-        <?php if (isset($error)): ?>
+        <?php if (!empty($error)): ?>
         <div class="error-message"><?php echo htmlspecialchars($error); ?></div>
         <?php endif; ?>
 
