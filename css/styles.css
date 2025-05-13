@@ -35,7 +35,7 @@ body {
 }
 
 .navbar-nav .nav-link {
-    color: #ffffff; /* Letras blancas */
+    color: #ffffff;
     font-weight: 500;
     text-transform: uppercase;
     padding: 10px 20px;
@@ -92,8 +92,6 @@ body {
     padding: 1rem 2rem;
     border-radius: 10px;
 }
-
-
 
 /* Proyectos */
 #proyectos img {
@@ -244,8 +242,8 @@ h2:before {
 
 /* Footer */
 footer {
-    background-color: #f3f4f6;
-    color: #1f2937;
+    background-color: #161b22;
+    color: #ffffff;
     padding: 25px 20px;
     text-align: center;
     border-radius: 8px;
@@ -258,7 +256,7 @@ footer p {
 
 /* Navigation */
 nav {
-    background-color: #2563eb;
+    background-color: #3b82f6;
     padding: 15px 0;
     text-align: center;
     margin-bottom: 20px;
@@ -341,76 +339,3 @@ form button:hover {
     font-size: 32px;
     font-weight: bold;
 }
-
-/* Footer */
-footer {
-    background-color: #161b22;
-    color: #ffffff;
-    padding: 25px 20px;
-    text-align: center;
-    border-radius: 8px;
-    margin-top: 40px;
-}
-
-footer p {
-    font-size: 14px;
-}
-
-/* Navigation */
-nav {
-    background-color: #3b82f6;
-    padding: 15px 0;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    margin: 0 20px;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* Responsiveness */
-@media (max-width: 1024px) {
-    body {
-        font-size: 15px;
-    }
-
-    table th, table td {
-        padding: 15px 12px;
-    }
-
-    h2 {
-        font-size: 26px;
-    }
-
-    ul li {
-        font-size: 15px;
-    }
-}
-
-@media (max-width: 768px) {
-    table, ul {
-        font-size: 14px;
-    }
-
-    table th, table td {
-        padding: 12px 10px;
-    }
-
-    h2 {
-        font-size: 22px;
-    }
-
-    main {
-        padding: 15px;
-    }
-}
-
-
