@@ -22,8 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute(['correo' => $correo]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        // Comparación de contraseña (sin hash, solo para ejemplo simple)
-        if ($user && $password === $user['contraseña']) {
+        // Verificar la contraseña usando password_verify()
+        if ($user && password_verify($password, $user['contrasena'])) {
             // Establecer variables de sesión
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user_name'] = $user['nombre'];

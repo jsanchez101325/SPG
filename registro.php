@@ -9,45 +9,50 @@ if (isset($_SESSION['user_id'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nombre = htmlspecialchars($_POST['nombre']);
+    // Sanitizar entradas
+    $nombre = htmlspecialchars(trim($_POST['nombre']));
     $correo = filter_input(INPUT_POST, 'correo', FILTER_SANITIZE_EMAIL);
     $password = $_POST['password'];
-    $rol = 'usuario'; // Rol forzado desde el backend
+    $rol = 'usuario'; // Rol por defecto
+    $fecha_registro = date('Y-m-d H:i:s'); // Fecha actual
 
-    // Validar campos requeridos
+    // Validaciones
     if (empty($nombre) || empty($correo) || empty($password)) {
         $error = "Todos los campos son obligatorios.";
+    } elseif (!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
+        $error = "El correo electrónico no es válido.";
+    } elseif (strlen($password) < 6) {
+        $error = "La contraseña debe tener al menos 6 caracteres.";
     } else {
-        // Validar que el correo tenga un formato correcto
-        if (!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
-            $error = "El correo electrónico no es válido.";
+        // Verificar si el correo ya está registrado
+        $stmt = $pdo->prepare("SELECT id FROM usuarios WHERE correo = :correo");
+        $stmt->execute(['correo' => $correo]);
+
+        if ($stmt->fetch()) {
+            $error = "El correo ya está registrado.";
         } else {
-            // Verificar si el correo ya existe
-            $stmt = $pdo->prepare("SELECT id FROM usuarios WHERE correo = :correo");
-            $stmt->execute(['correo' => $correo]);
+            // Encriptar contraseña
+            $hash_password = password_hash($password, PASSWORD_DEFAULT);
 
-            if ($stmt->fetch()) {
-                $error = "El correo ya está registrado.";
+            // Insertar el nuevo usuario
+            $query = "INSERT INTO usuarios (nombre, correo, contrasena, rol, fecha_creacion) 
+                      VALUES (:nombre, :correo, :contrasena, :rol, :fecha)";
+            $stmt = $pdo->prepare($query);
+
+            $result = $stmt->execute([
+                'nombre' => $nombre,
+                'correo' => $correo,
+                'contrasena' => $hash_password,
+                'rol' => $rol,
+                'fecha' => $fecha_registro
+            ]);
+
+            if ($result) {
+                $success = "Usuario registrado correctamente. Puedes iniciar sesión.";
+                header('Location: login.php');
+                exit;
             } else {
-                // Hash de la contraseña
-                $hash_password = password_hash($password, PASSWORD_DEFAULT);
-
-                // Insertar el nuevo usuario (sin 'rol' como parámetro en el formulario)
-                $query = "INSERT INTO usuarios (nombre, correo, contraseña, rol) 
-                          VALUES (:nombre, :correo, :contraseña, :rol)";
-                $stmt = $pdo->prepare($query);
-
-                // Verificar si la inserción fue exitosa
-                if ($stmt->execute([
-                    'nombre' => $nombre,
-                    'correo' => $correo,
-                    'contraseña' => $hash_password,
-                    'rol' => $rol // No se pasa desde el formulario, siempre será 'usuario'
-                ])) {
-                    $success = "Usuario registrado correctamente. Ahora puedes iniciar sesión.";
-                } else {
-                    $error = "Hubo un problema al registrar el usuario. Intenta nuevamente.";
-                }
+                $error = "Hubo un problema al registrar el usuario. Intenta nuevamente.";
             }
         }
     }

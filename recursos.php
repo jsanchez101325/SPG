@@ -7,6 +7,7 @@ $stmt_proyectos = $pdo->query($query_proyectos);
 $proyectos = $stmt_proyectos->fetchAll(PDO::FETCH_ASSOC);
 
 // Verifica si se ha enviado el formulario
+$mensaje = '';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $proyecto_id = $_POST['proyecto_id'];
     $nombre = $_POST['nombre'];
@@ -26,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         ':fecha_adquisicion' => $fecha_adquisicion
     ]);
 
-    echo "Recurso creado con éxito.";
+    $mensaje = "✅ Recurso creado con éxito.";
 }
 ?>
 
@@ -35,63 +36,63 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <head>
     <meta charset="UTF-8">
-    <title>Crear Recurso</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Crear Recursos</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Incluir Font Awesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>🔨 Crear Recurso - Constructora SPG</h1>
-    </header>
+    <?php include 'header.php'; ?>
 
-    <nav>
-        <a href="index.php">🏠 Inicio</a>
-        <a href="proyectos.php">📊 Proyectos</a>
-        <a href="presupuesto.php">📊 Presupuesto</a>
-        <a href="recursos.php">🔨 Recursos</a>
-    </nav>
+    <main class="contenedor">
+        <h2><i class="fas fa-toolbox"></i> Formulario para Crear Recurso</h2>
 
-    <main>
-        <h2>Formulario para Crear Recurso</h2>
-        <form action="recursos.php" method="POST">
-            <div>
-                <label for="proyecto_id">Proyecto</label>
-                <select id="proyecto_id" name="proyecto_id" required>
+        <?php if (!empty($mensaje)) : ?>
+        <div class="mensaje-exito"><?php echo $mensaje; ?></div>
+        <?php endif; ?>
+
+        <form action="recursos.php" method="POST" class="formulario">
+            <div class="form-group">
+                <label for="proyecto_id" class="form-label"><i class="fas fa-diagram-project"></i> Proyecto</label>
+                <select id="proyecto_id" name="proyecto_id" class="form-input" required>
                     <?php foreach ($proyectos as $proyecto): ?>
-                    <option value="<?php echo $proyecto['id']; ?>"><?php echo htmlspecialchars($proyecto['nombre']); ?>
+                    <option value="<?php echo $proyecto['id']; ?>">
+                        <?php echo htmlspecialchars($proyecto['nombre']); ?>
                     </option>
                     <?php endforeach; ?>
                 </select>
             </div>
 
             <div class="form-group">
-                <label for="nombre" class="form-label">Nombre del Recurso</label>
+                <label for="nombre" class="form-label"><i class="fas fa-box-open"></i> Nombre del Recurso</label>
                 <input type="text" id="nombre" name="nombre" class="form-input" required>
             </div>
 
-
-            <div>
-                <label for="cantidad">Cantidad</label>
-                <input type="number" id="cantidad" name="cantidad" required>
+            <div class="form-group">
+                <label for="cantidad" class="form-label"><i class="fas fa-sort-numeric-up"></i> Cantidad</label>
+                <input type="number" id="cantidad" name="cantidad" class="form-input" required>
             </div>
 
-            <div>
-                <label for="costo">Costo</label>
-                <input type="number" id="costo" name="costo" step="0.01" required>
+            <div class="form-group">
+                <label for="costo" class="form-label"><i class="fas fa-dollar-sign"></i> Costo</label>
+                <input type="number" id="costo" name="costo" step="0.01" class="form-input" required>
             </div>
 
-            <div>
-                <label for="fecha_adquisicion">Fecha de Adquisición</label>
-                <input type="date" id="fecha_adquisicion" name="fecha_adquisicion" required>
+            <div class="form-group">
+                <label for="fecha_adquisicion" class="form-label"><i class="fas fa-calendar-alt"></i> Fecha de
+                    Adquisición</label>
+                <input type="date" id="fecha_adquisicion" name="fecha_adquisicion" class="form-input" required>
             </div>
 
-            <div>
-                <button type="submit">Crear Recurso</button>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Crear Recurso</button>
             </div>
         </form>
     </main>
 
+    <?php include 'footer.php'; ?>
 </body>
 
 </html>

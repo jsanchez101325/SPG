@@ -29,13 +29,13 @@ body {
 
 .navbar-brand {
     font-size: 1.8rem;
-    color: #1f2937;
+    color: #ffffff;
     font-weight: bold;
     text-transform: uppercase;
 }
 
 .navbar-nav .nav-link {
-    color: #4b5563;
+    color: #ffffff; /* Letras blancas */
     font-weight: 500;
     text-transform: uppercase;
     padding: 10px 20px;
@@ -92,6 +92,8 @@ body {
     padding: 1rem 2rem;
     border-radius: 10px;
 }
+
+
 
 /* Proyectos */
 #proyectos img {
@@ -410,3 +412,5 @@ nav a:hover {
         padding: 15px;
     }
 }
+
+

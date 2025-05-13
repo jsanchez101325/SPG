@@ -22,7 +22,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#servicios"><i class="fas fa-construction"></i> Servicios</a>
+                        <a class="nav-link" href="#servicios"><i class="fas fa-tools"></i> Servicios</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#proyectos"><i class="fas fa-project-diagram"></i> Proyectos</a>
@@ -34,28 +34,26 @@
                         <a class="nav-link" href="#contacto"><i class="fas fa-envelope"></i> Contacto</a>
                     </li>
                     <?php
-                session_start();
-                if (isset($_SESSION['usuario'])) {
-                    echo '
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-user"></i> ' . $_SESSION['usuario'] . '</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
-                    </li>';
-                } else {
-                    echo '
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.php"><i class="fas fa-user"></i> Cuenta</a>
-                    </li>';
-                }
-                ?>
+                    session_start();
+                    if (isset($_SESSION['usuario'])) {
+                        echo '
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-user"></i> ' . $_SESSION['usuario'] . '</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+                        </li>';
+                    } else {
+                        echo '
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.php"><i class="fas fa-user"></i> Login</a>
+                        </li>';
+                    }
+                    ?>
                 </ul>
             </div>
         </div>
     </nav>
-
-
 
     <!-- Hero -->
     <div class="hero">
@@ -69,7 +67,6 @@
         </div>
         <h1>Construyendo el Futuro Contigo</h1>
     </div>
-
 
     <!-- Servicios -->
     <section class="py-5 bg-light" id="servicios">
@@ -98,7 +95,6 @@
         </div>
     </section>
 
-    <!-- Proyectos -->
     <!-- Proyectos -->
     <section class="py-5" id="proyectos">
         <div class="container">
@@ -141,15 +137,15 @@
     <section class="py-5" id="contacto">
         <div class="container-contacto">
             <h2 class="text-center mb-4">Contáctanos</h2>
-            <form class="row g-3">
+            <form class="row g-3" action="enviar_correo.php" method="POST">
                 <div class="col-md-6">
-                    <input type="text" class="form-control" placeholder="Nombre completo">
+                    <input type="text" class="form-control" placeholder="Nombre completo" name="nombre" required>
                 </div>
                 <div class="col-md-6">
-                    <input type="email" class="form-control" placeholder="Correo electrónico">
+                    <input type="email" class="form-control" placeholder="Correo electrónico" name="email" required>
                 </div>
                 <div class="col-12">
-                    <textarea class="form-control" rows="4" placeholder="Mensaje"></textarea>
+                    <textarea class="form-control" rows="4" placeholder="Mensaje" name="mensaje" required></textarea>
                 </div>
                 <div class="col-12 text-center">
                     <button type="submit" class="btn btn-primary px-5">Enviar</button>
@@ -157,7 +153,6 @@
             </form>
         </div>
     </section>
-
 
     <!-- Footer -->
     <footer class="text-center">

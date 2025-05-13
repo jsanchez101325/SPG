@@ -34,54 +34,53 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Crear Presupuesto</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Incluir Font Awesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>💰 Crear Presupuesto - Constructora SPG</h1>
-    </header>
-
-    <nav>
-        <a href="index.php">🏠 Inicio</a>
-        <a href="proyectos.php">📊 Proyectos</a>
-        <a href="presupuesto.php">📊 Presupuesto</a>
-    </nav>
+    <!-- Incluir el header y navegación -->
+    <?php include('header.php'); ?>
 
     <main>
-        <h2>Formulario para Crear Presupuesto</h2>
+        <h2><i class="fas fa-calculator"></i> Formulario para Crear Presupuesto</h2>
         <form action="presupuesto.php" method="POST">
             <div>
-                <label for="proyecto_id">Proyecto</label>
+                <label for="proyecto_id"><i class="fas fa-clipboard-list"></i> Proyecto</label>
                 <select id="proyecto_id" name="proyecto_id" required>
                     <?php foreach ($proyectos as $proyecto): ?>
-                    <option value="<?php echo $proyecto['id']; ?>"><?php echo htmlspecialchars($proyecto['nombre']); ?>
+                    <option value="<?php echo $proyecto['id']; ?>">
+                        <?php echo htmlspecialchars($proyecto['nombre']); ?>
                     </option>
                     <?php endforeach; ?>
                 </select>
             </div>
 
             <div>
-                <label for="monto">Monto</label>
+                <label for="monto"><i class="fas fa-dollar-sign"></i> Monto</label>
                 <input type="number" id="monto" name="monto" step="0.01" required>
             </div>
 
             <div>
-                <label for="fecha">Fecha</label>
+                <label for="fecha"><i class="fas fa-calendar-alt"></i> Fecha</label>
                 <input type="date" id="fecha" name="fecha" required>
             </div>
 
             <div>
-                <label for="descripcion">Descripción</label>
+                <label for="descripcion"><i class="fas fa-pencil-alt"></i> Descripción</label>
                 <textarea id="descripcion" name="descripcion" required></textarea>
             </div>
 
-            <div>
-                <button type="submit">Crear Presupuesto</button>
+            <div style="text-align: center;">
+                <button type="submit"><i class="fas fa-plus-circle"></i> Crear Presupuesto</button>
             </div>
         </form>
     </main>
+
+    <!-- Incluir el footer -->
+    <?php include('footer.php'); ?>
 
 </body>
 

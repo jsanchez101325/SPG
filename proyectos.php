@@ -38,7 +38,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Crear Proyecto</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Incluir Font Awesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
@@ -47,30 +49,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php include('header.php'); ?>
 
     <main>
-        <h2>Formulario para Crear Proyecto</h2>
+        <h2><i class="fas fa-project-diagram"></i> Formulario para Crear Proyecto</h2>
         <form action="proyectos.php" method="POST">
             <div>
-                <label for="nombre">Nombre del Proyecto</label>
+                <label for="nombre"><i class="fas fa-heading"></i> Nombre del Proyecto</label>
                 <input type="text" id="nombre" name="nombre" required>
             </div>
 
             <div>
-                <label for="descripcion">Descripción</label>
+                <label for="descripcion"><i class="fas fa-pencil-alt"></i> Descripción</label>
                 <textarea id="descripcion" name="descripcion" required></textarea>
             </div>
 
             <div>
-                <label for="fecha_inicio">Fecha de Inicio</label>
+                <label for="fecha_inicio"><i class="fas fa-calendar-alt"></i> Fecha de Inicio</label>
                 <input type="date" id="fecha_inicio" name="fecha_inicio" required>
             </div>
 
             <div>
-                <label for="fecha_termino">Fecha de Término</label>
+                <label for="fecha_termino"><i class="fas fa-calendar-check"></i> Fecha de Término</label>
                 <input type="date" id="fecha_termino" name="fecha_termino" required>
             </div>
 
             <div>
-                <label for="estado">Estado</label>
+                <label for="estado"><i class="fas fa-sync-alt"></i> Estado</label>
                 <select id="estado" name="estado" required>
                     <option value="En Planificación">En Planificación</option>
                     <option value="Ejecutando">Ejecutando</option>
@@ -79,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
 
             <div>
-                <label for="usuario_id">Responsable</label>
+                <label for="usuario_id"><i class="fas fa-user-tie"></i> Responsable</label>
                 <select id="usuario_id" name="usuario_id" required>
                     <?php foreach ($usuarios as $usuario): ?>
                     <option value="<?php echo $usuario['id']; ?>"><?php echo htmlspecialchars($usuario['nombre']); ?>
@@ -89,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
 
             <div>
-                <button type="submit">Crear Proyecto</button>
+                <button type="submit"><i class="fas fa-plus-circle"></i> Crear Proyecto</button>
             </div>
         </form>
     </main>
