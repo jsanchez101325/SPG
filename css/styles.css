@@ -1,0 +1,354 @@
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tipografía y fondo general */
+body {
+    background-color: #f9fafb;
+    color: #1f2937;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    padding-top: 70px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #3b82f6;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    /* Cambié justify-content de space-between a center para centrar todo */
+    justify-content: center;
+    padding: 0 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    gap: 60px; /* espacio entre logo y menú */
+}
+
+/* Para que el logo quede a la izquierda y no se mueva */
+.navbar-brand {
+    position: absolute;
+    left: 30px;
+    display: flex;
+    align-items: center;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #fff; /* o el color que uses para el texto */
+    text-decoration: none;
+    z-index: 1100; /* encima del menú */
+}
+
+.navbar-brand .logo {
+    height: 40px;
+    width: auto;
+    margin-right: 12px;
+    display: inline-block;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #dbeafe;
+}
+
+
+/* Hero con slider */
+.hero {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1f2937;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    margin-top: 70px;
+}
+
+.slider-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400%;
+    height: 100%;
+    display: flex;
+    animation: slide-hero 20s linear infinite;
+    z-index: 0;
+}
+
+.slider-background img {
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero h1 {
+    position: relative;
+    z-index: 1;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 1rem 2rem;
+    border-radius: 10px;
+}
+
+/* Proyectos */
+.proyectos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+#proyectos img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+#proyectos img:hover {
+    transform: scale(1.05);
+}
+
+/* Secciones generales */
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+h2 {
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #2563eb;
+}
+
+h2::before {
+    content: '📋';
+    margin-right: 10px;
+}
+
+p, ul {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+ul {
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Formulario */
+form {
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px;
+}
+
+form div {
+    margin-bottom: 18px;
+}
+
+form label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background-color: #f9fafb;
+    color: #1f2937;
+    font-size: 16px;
+}
+
+form button {
+    background-color: #2563eb;
+    color: #ffffff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: #1d4ed8;
+}
+
+/* Contacto */
+.container-contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Footer */
+footer {
+    background-color: #161b22;
+    color: #ffffff;
+    padding: 25px 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+/* Animación Hero */
+@keyframes slide-hero {
+    0%   { transform: translateX(0); }
+    25%  { transform: translateX(-100vw); }
+    50%  { transform: translateX(-200vw); }
+    75%  { transform: translateX(-300vw); }
+    100% { transform: translateX(0); }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    body {
+        font-size: 15px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .proyectos-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #proyectos img {
+        width: 90%;
+        height: auto;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        padding: 1rem;
+    }
+
+    main {
+        padding: 20px;
+    }
+}
+
+/* Carousel */
+.carousel {
+  position: relative;
+  max-width: 600px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.carousel-track-container {
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(63, 81, 181, 0.7);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  user-select: none;
+  z-index: 10;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(63, 81, 181, 0.9);
+}

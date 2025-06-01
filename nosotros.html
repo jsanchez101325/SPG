@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nosotros - SPG Constructora</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Oswald&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">SPG Constructora</a>
+      <ul class="navbar-nav">
+        <li><a class="nav-link" href="index.html#inicio">Inicio</a></li>
+        <li><a class="nav-link" href="index.html#proyectos">Proyectos</a></li>
+        <li><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+        <li><a class="nav-link" href="servicios.html">Servicios</a></li>
+        <li><a class="nav-link" href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section id="nosotros" class="section-nosotros">
+      <h2>¿Quiénes Somos?</h2>
+      <p>En SPG Constructora somos una empresa con más de 10 años de experiencia en el sector de la construcción. Nuestro enfoque está en ofrecer soluciones innovadoras, seguras y de alta calidad para todos nuestros clientes.</p>
+      
+      <h3>Nuestra Misión</h3>
+      <p>Brindar servicios de construcción que superen las expectativas de nuestros clientes, promoviendo la innovación, seguridad y sustentabilidad en cada proyecto.</p>
+
+      <h3>Nuestra Visión</h3>
+      <p>Ser reconocidos como líderes en la industria de la construcción, destacándonos por la excelencia, responsabilidad social y compromiso ambiental.</p>
+
+      <h3>Valores</h3>
+      <ul class="valores-lista">
+        <li><strong>Calidad:</strong> Nos comprometemos con los más altos estándares en cada obra.</li>
+        <li><strong>Seguridad:</strong> La seguridad de nuestro equipo y clientes es prioritaria.</li>
+        <li><strong>Innovación:</strong> Incorporamos tecnología y prácticas modernas.</li>
+        <li><strong>Responsabilidad ambiental:</strong> Promovemos la construcción sostenible.</li>
+        <li><strong>Transparencia:</strong> Comunicación clara y honesta en todos los procesos.</li>
+      </ul>
+
+      <h3>Equipo</h3>
+      <p>Contamos con un equipo multidisciplinario de profesionales altamente capacitados, desde ingenieros civiles, arquitectos, hasta técnicos y personal administrativo, todos comprometidos con la excelencia.</p>
+
+      <div class="carousel">
+        <button class="carousel-btn prev">&#10094;</button>
+        <div class="carousel-track-container">
+          <ul class="carousel-track">
+            <li class="carousel-slide">
+              <img src="imagenes/img3.jpg" alt="Equipo SPG 1" />
+            </li>
+            <li class="carousel-slide">
+              <img src="imagenes/img4.jpg" alt="Equipo SPG 2" />
+            </li>
+            <li class="carousel-slide">
+              <img src="imagenes/img2.jpg" alt="Equipo SPG 3" />
+            </li>
+          </ul>
+        </div>
+        <button class="carousel-btn next">&#10095;</button>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 SPG Constructora. Todos los derechos reservados.</p>
+  </footer>
+
+<script>
+  const track = document.querySelector('.carousel-track');
+  if (!track) {
+    console.warn('No se encontró el carrusel.');
+  } else {
+    const slides = Array.from(track.children);
+    if (slides.length === 0) {
+      console.warn('No hay diapositivas en el carrusel.');
+    } else {
+      const nextButton = document.querySelector('.carousel-btn.next');
+      const prevButton = document.querySelector('.carousel-btn.prev');
+      const slideWidth = slides[0].getBoundingClientRect().width;
+
+      // Ubicar las slides una al lado de otra
+      slides.forEach((slide, index) => {
+        slide.style.left = slideWidth * index + 'px';
+      });
+
+      let currentSlideIndex = 0;
+
+      const moveToSlide = (targetIndex) => {
+        track.style.transform = 'translateX(-' + (slideWidth * targetIndex) + 'px)';
+        currentSlideIndex = targetIndex;
+      };
+
+      nextButton.addEventListener('click', () => {
+        let nextIndex = currentSlideIndex + 1;
+        if (nextIndex >= slides.length) nextIndex = 0;
+        moveToSlide(nextIndex);
+      });
+
+      prevButton.addEventListener('click', () => {
+        let prevIndex = currentSlideIndex - 1;
+        if (prevIndex < 0) prevIndex = slides.length - 1;
+        moveToSlide(prevIndex);
+      });
+    }
+  }
+</script>
+
+</body>
+</html>
