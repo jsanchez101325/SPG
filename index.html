@@ -4,14 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Constructora SPG</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="imagenes/png" href="imagenes/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Oswald&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar">
+   <nav class="navbar">
   <div class="container">
     <a class="navbar-brand" href="#">
       <img src="imagenes/logo.png" alt="Logo SPG" style="height: 40px; vertical-align: middle; margin-right: 10px;">
@@ -25,7 +27,7 @@
       <li><a class="nav-link" href="contacto.html">Contacto</a></li>
     </ul>
   </div>
-</nav>
+</nav> 
 
 
   <!-- Hero -->
@@ -40,16 +42,30 @@
   </section>
 
   <!-- Proyectos -->
-  <main>
-    <section id="proyectos">
-      <h2>Nuestros Proyectos</h2>
-      <div class="proyectos-grid">
+
+<main>
+  <section id="proyectos">
+    <h2>Nuestros Proyectos</h2>
+    <div class="proyectos-grid">
+      <div class="proyecto">
         <img src="imagenes/Puente.jpg" alt="Proyecto 1" />
-        <img src="imagenes/Puente1.jpg" alt="Proyecto 2" />
-        <img src="imagenes/avenida.jpg" alt="Proyecto 3" />
+        <div class="overlay">Construcción de Puente</div>
       </div>
-    </section>
-  </main>
+      <div class="proyecto">
+        <img src="imagenes/Puente1.jpg" alt="Proyecto 2" />
+        <div class="overlay">Puente en Zona Rural</div>
+      </div>
+      <div class="proyecto">
+        <img src="imagenes/avenida.jpg" alt="Proyecto 3" />
+        <div class="overlay">Avenida Principal</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+
+
 
   <!-- Mapa -->
   <section id="ubicacion" style="margin: 40px 0;">
@@ -68,11 +84,11 @@
     </div>
   </section>
 
- <!-- Footer -->
-<footer style="background-color: #1F2937; color: white; text-align: center; padding: 20px;">
-  <p>&copy; 2025 SPG Constructora. Todos los derechos reservados.</p>
-  
-  <!-- Botones de redes sociales -->
+  <!-- Footer -->
+  <footer>
+    <p id="footer" class="footer"> &copy; 2025 SPG Constructora. Todos los derechos reservados.</p>
+
+    <!-- Botones de redes sociales -->
   <div style="margin-top: 10px;">
     <a href="https://www.facebook.com/SPGConstructora" target="_blank" style="margin: 0 10px; color: #38BDF8;">
       <i class="fab fa-facebook fa-lg"></i>
@@ -87,7 +103,7 @@
       <i class="fab fa-whatsapp fa-lg"></i>
     </a>
   </div>
-</footer>
+  </footer>
 
 </body>
 </html>
