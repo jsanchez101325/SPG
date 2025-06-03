@@ -1,0 +1,116 @@
+/* Reset del body y configuración base */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f5f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Contenedor principal */
+.error-container {
+  text-align: center;
+  padding: 4vw;
+  border-radius: 15px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  max-width: 90vw;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Número con gradiente animado */
+.error-container h1 {
+  font-size: clamp(4rem, 10vw, 10rem);
+  font-weight: 900;
+  background: linear-gradient(270deg, #eb4625, #0345a7, #28a745, #ffc107, #eb4625);
+  background-size: 800% 800%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: animateGradient 5s ease infinite;
+  margin-bottom: 1rem;
+}
+
+/* Subtítulo */
+.error-container h2 {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+  font-family: 'Oswald', sans-serif;
+}
+
+/* Texto descriptivo */
+.error-container p {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  color: #475569;
+  margin-bottom: 2rem;
+}
+
+/* Botón de retorno */
+.error-container a {
+  display: inline-block;
+  padding: clamp(10px, 2vw, 16px) clamp(20px, 5vw, 32px);
+  background-color: #0345a7;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.error-container a:hover {
+  background-color: #012c6d;
+  transform: scale(1.05);
+}
+
+/* Contenedor del icono */
+.icon-container {
+  margin-bottom: 20px;
+  animation: zoomIcon 4s ease-in-out infinite;
+}
+
+/* Imagen del icono */
+.icon-container img {
+  width: clamp(80px, 15vw, 160px);
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+/* Animación de gradiente del número */
+@keyframes animateGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Animación del contenedor principal */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación de zoom suave del icono */
+@keyframes zoomIcon {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
