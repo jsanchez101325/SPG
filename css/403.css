@@ -1,4 +1,3 @@
-/* Centrar el contenido del body */
 body {
   margin: 0;
   padding: 0;
@@ -10,41 +9,47 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Contenedor principal */
+/* Contenedor del error */
 .error-container {
-  max-width: 600px;
+  text-align: center;
   padding: 40px;
   border-radius: 15px;
   background-color: #ffffff;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  border-left: 8px solid #eb4625;
-  text-align: center;
+  max-width: 600px;
 }
 
-/* Título del error */
+/* Número con efecto dinámico de colores */
 .error-container h1 {
-  font-size: 6rem;
-  color: #eb4625;
-  margin-bottom: 20px;
+  font-size: 7rem;
   font-weight: 900;
+  background: linear-gradient(270deg, #eb4625, #0345a7, #28a745, #ffc107, #eb4625);
+  background-size: 800% 800%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: animateGradient 5s ease infinite;
+  margin-bottom: 20px;
 }
+
 
 /* Subtítulo */
 .error-container h2 {
   font-size: 2rem;
-  color: #0345a7;
+  color: #1e293b;
   margin-bottom: 10px;
   font-family: 'Oswald', sans-serif;
 }
 
-/* Descripción */
+/* Texto descriptivo */
 .error-container p {
   font-size: 1.1rem;
   color: #475569;
   margin-bottom: 30px;
 }
 
-/* Botón para volver al inicio */
+/* Botón */
 .error-container a {
   display: inline-block;
   padding: 12px 24px;
@@ -55,7 +60,19 @@ body {
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
-
 .error-container a:hover {
   background-color: #012c6d;
+}
+
+/* Animación del gradiente */
+@keyframes animateGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
