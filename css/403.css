@@ -1,0 +1,61 @@
+/* Centrar el contenido del body */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f5f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Contenedor principal */
+.error-container {
+  max-width: 600px;
+  padding: 40px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  border-left: 8px solid #eb4625;
+  text-align: center;
+}
+
+/* Título del error */
+.error-container h1 {
+  font-size: 6rem;
+  color: #eb4625;
+  margin-bottom: 20px;
+  font-weight: 900;
+}
+
+/* Subtítulo */
+.error-container h2 {
+  font-size: 2rem;
+  color: #0345a7;
+  margin-bottom: 10px;
+  font-family: 'Oswald', sans-serif;
+}
+
+/* Descripción */
+.error-container p {
+  font-size: 1.1rem;
+  color: #475569;
+  margin-bottom: 30px;
+}
+
+/* Botón para volver al inicio */
+.error-container a {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #0345a7;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.error-container a:hover {
+  background-color: #012c6d;
+}
