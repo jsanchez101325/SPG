@@ -27,15 +27,16 @@ body {
     height: 70px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* Asegura que los elementos estén distribuidos */
     padding: 0 44px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Para que el logo quede a la izquierda y no se mueva */
+/* Logo a la izquierda */
 .navbar-brand {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     font-family: 'Oswald', sans-serif;
     font-weight: bold;
     font-size: 1rem;
@@ -74,12 +75,12 @@ body {
     color: #020479;
 }
 
-/* Contenedor de login y hamburguesa */
+/* Contenedor para Login y menú hamburguesa */
 .navbar-controls {
     display: flex;
     align-items: center;
     gap: 10px;
-    z-index: 1101;
+    margin-left: auto; /* Alinea todo el contenido de este contenedor a la derecha */
 }
 
 /* Botón Login */
@@ -115,6 +116,7 @@ body {
         padding: 0 20px;
     }
 
+    /* Menú en dispositivos móviles */
     .navbar-nav {
         position: absolute;
         top: 70px;
@@ -136,6 +138,7 @@ body {
         display: block;
     }
 
+    /* Contenedor de Login y hamburguesa */
     .navbar-controls {
         gap: 10px;
     }
