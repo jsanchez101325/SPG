@@ -24,29 +24,24 @@ body {
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 0 42px;
     height: 70px;
     display: flex;
     align-items: center;
-    /* Cambié justify-content de space-between a center para centrar todo */
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 0 44px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    gap: 40px; /* espacio entre logo y menú */
 }
 
 /* Para que el logo quede a la izquierda y no se mueva */
 .navbar-brand {
-    position: absolute;
-    left: 4px;
     display: flex;
-    align-items:center ;
+    align-items: center;
     font-family: 'Oswald', sans-serif;
     font-weight: bold;
     font-size: 1rem;
-    color: #ffffffeb; /* o el color que uses para el texto */
+    color: #ffffffeb;
     text-decoration: none;
-    z-index: 1100; /* encima del menú */
+    z-index: 1100;
 }
 
 .navbar-brand .logo {
@@ -56,6 +51,7 @@ body {
     display: inline-block;
 }
 
+/* Menú principal */
 .navbar-nav {
     list-style: none;
     display: flex;
@@ -67,7 +63,7 @@ body {
 .navbar-nav .nav-link {
     font-size: 1rem;
     color: #fcfcfc;
-    font-weight: 300px;
+    font-weight: 300;
     text-transform: uppercase;
     text-decoration: none;
     padding: 10px;
@@ -78,10 +74,16 @@ body {
     color: #020479;
 }
 
+/* Contenedor de login y hamburguesa */
+.navbar-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1101;
+}
+
 /* Botón Login */
 .login-btn {
-    position: absolute;
-    right: 44px;
     padding: 8px 20px;
     background-color: #ffffff;
     color: #0345a7;
@@ -95,6 +97,52 @@ body {
 .login-btn:hover {
     background-color: #dce8ff;
     color: #021c4a;
+}
+
+/* Botón hamburguesa */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Responsive para móvil */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .navbar-nav {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: #0345a7;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        gap: 10px;
+        padding: 20px 0;
+    }
+
+    .navbar-nav.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar-controls {
+        gap: 10px;
+    }
+
+    .navbar-brand {
+        left: 0;
+    }
 }
 
 

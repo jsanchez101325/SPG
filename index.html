@@ -17,7 +17,8 @@
     <img src="imagenes/logo.png" alt="Logo SPG" class="logo">
     SPG Constructora
   </a>
-  <ul class="navbar-nav">
+  <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+  <ul class="navbar-nav" id="navbar-menu">
     <li><a class="nav-link" href="#inicio">Inicio</a></li>
     <li><a class="nav-link" href="#proyectos">Proyectos</a></li>
     <li><a class="nav-link" href="nosotros.html">Nosotros</a></li>
@@ -104,6 +105,18 @@
     </a>
   </div>
   </footer>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('navbar-menu');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+
+  
+</script>
+
 
 </body>
 </html>
