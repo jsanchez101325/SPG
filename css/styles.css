@@ -11,9 +11,7 @@ body {
     color: #1f2937;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    padding-top: 70px;
-      
- 
+    padding-top: 70px; /* espacio para la navbar fija */
 }
 
 /* Navbar */
@@ -27,7 +25,7 @@ body {
     height: 70px;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Asegura que los elementos estén distribuidos */
+    justify-content: space-between;
     padding: 0 44px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -36,20 +34,17 @@ body {
 .navbar-brand {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     font-family: 'Oswald', sans-serif;
     font-weight: bold;
     font-size: 1rem;
     color: #ffffffeb;
     text-decoration: none;
-    z-index: 1100;
 }
 
 .navbar-brand .logo {
     height: 40px;
     width: auto;
     margin-right: 12px;
-    display: inline-block;
 }
 
 /* Menú principal */
@@ -75,12 +70,11 @@ body {
     color: #020479;
 }
 
-/* Contenedor para Login y menú hamburguesa */
+/* Controles: Login + Hamburguesa */
 .navbar-controls {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-left: auto; /* Alinea todo el contenido de este contenedor a la derecha */
 }
 
 /* Botón Login */
@@ -116,7 +110,6 @@ body {
         padding: 0 20px;
     }
 
-    /* Menú en dispositivos móviles */
     .navbar-nav {
         position: absolute;
         top: 70px;
@@ -136,15 +129,6 @@ body {
 
     .menu-toggle {
         display: block;
-    }
-
-    /* Contenedor de Login y hamburguesa */
-    .navbar-controls {
-        gap: 10px;
-    }
-
-    .navbar-brand {
-        left: 0;
     }
 }
 
